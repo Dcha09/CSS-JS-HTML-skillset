@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Macondo&family=PT+Sans:wght@700&display=swap');
+
+/* Table of Content
+general content layout
+
+Navigation bar (two seperate containers for logo and buttons)
+  - container for logo "koala kalubutt"
+  - container for Navigation buttons 
+
+Container that holds both content for both art and hero section
+  - Hero container: nested with title and action buttons
+Koala container (Canvas for koala art, parts are all nested within container, set role="img" that way can adjust overall position if needed without distorting image)
+  - head container - parts are nested within this container, helps maintain position of head parts if any adjustments are made
+  - 
+  */
+        
+
+:root {
+  --background-color: #00BFFF;
+  --button-color: #0ee7d5fa;
+  --hero-background-color: #32f1a8fa;
+}
+body {
+  border-right-style: inset;
+  border: 50px solid #abe6f5b6;
+  background-color: #00BFFF;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 150px;
+  place-items: center;
+  margin: 0;
+  font-family: 'PT Sans', sans-serif;
+}
+
+li, a, button {
+  font-weight: 200;
+  font-size: 16px;
+  text-decoration: none;
+  list-style: none;
+  padding: 7px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 200px;
+  margin: 0px;
+  padding: 30px, 30px;
+
+}
+
+
+/*Navigation Bar */
+
+.logo-container {
+  display: inline-flex;
+  position: relative;
+  margin: 20px;
+    .logo {
+      text-decoration: underline;
+      color: white;
+      font-family: 'Macondo', cursive;
+      font-size: 60px;
+    }
+}
+.navcontainer {
+  border-bottom: 2px dashed white;
+}
+
+.Nav_links {
+  display: inline-block;
+    li {
+      display: inline-block;
+      padding: 2px 20px;
+      color: white;
+      transition: all 0.5s ease 0s;
+      a {
+        color: white;
+        font-size: 20px;
+      }
+    } 
+    li:hover {
+      transform: rotate(15deg);
+    }
+    a:hover {
+      color: #16a3cefa;
+    }
+  }
+
+
+/*hero-play starts here */
+
+.head-hero {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 180px;
+}
+
+.hero-container {
+  position: relative;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-shadow: inset -20px 3px 25px 5px #b8ac9e;
+  background: #FFE4C4;
+  border-radius: 30%;
+  border:1px solid black;
+  display: flex;
+  margin: 30px;
+    .change-looks {
+      text-decoration: underline;
+      background-color: none;
+      display: flex;
+      padding: 15px;
+      color: rgb(10, 10, 10); 
+      font-size: 3em;
+      text-align: flex-start;
+      position: relative;
+      font-family: 'Macondo', cursive;
+    }
+    .hero-buttons {
+      display: flex;
+      align-self: center;
+      justify-content: space-between;
+      padding: 10px;
+        button {
+          font-size: 18px;
+          font-weight: bolder;
+          display: flex;
+          align-self: flex-end;
+          padding: 6px;
+          border: 2px solid rgb(14, 13, 13);
+          cursor: pointer;
+          color: #060607d5; 
+          border-radius: 40%;
+          background-color: rgba(253, 186, 141, 0.719);
+          box-shadow: inset -5px 5px 1px .1px rgb(185, 131, 97);
+          transition: all 0.3s ease 0s;
+        }
+        button:hover {
+          color: #f0f7f8fa;
+          border: 2px dashed rgb(90,90,90);
+          transform: rotate(15deg);
+
+            }
+
+        }
+    
+    }
+
+
+
+
+
+/* Koala head section*/
+.koala-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: white;
+  border-radius: 20%;
+  width: 400px;
+  height: 400px;
+  margin: 0px;
+  place-items: center;
+  border-style: solid;
+  z-index: 1;
+}
+/*head*/
+.head {
+  width: 200px;
+  height: 200px;
+  border-radius: 150% 150% 50% 50%;
+  background-color: grey;
+  border: 3px solid black;
+  margin-top: 150px;
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  box-shadow: inset -8px -5px 15px 2px rgb(60,60,60);
+  z-index: 3;
+}
+.head::after,
+.head::before {
+  content: "";
+  display: block;
+  width: 110px;
+  height: 105px;
+  border-radius: 40% 40% 50% 50%;
+  background: grey;
+  position: absolute;
+  margin: 50px;
+  z-index: 4;
+}
+.head::after {
+  left: 62px;
+  top: 55px;
+  border-right: 3px solid black;
+  border-bottom: 2px solid black;
+  box-shadow: inset -3px -10px 5px 2px rgb(60,60,60);
+  clip-path: circle(50% at 62% 40%);
+  transform: rotate(-3deg);
+}
+.head::before {
+  right: 60px;
+  top: 55px;
+  border-left: 4px solid black;
+  border-bottom: 2px solid black;
+  box-shadow: inset 7px -12px 10px -3px rgb(60,60,60);
+  clip-path: circle(55.1% at 40% 34%);
+  transform: rotate(2deg);
+}
+
+.head
+/*mouth starts here*/
+.mouth {
+  width: 90px;
+  height: 70px;
+  margin-top: 120px;
+  margin-left: 55px;
+  background: grey;
+  border-radius: 50% 50% 30% 30%;
+  position: absolute;
+  z-index: 5;
+}
+.mouth::after,
+.mouth::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 40px;
+  margin-left: 15px;
+  margin-top: 15px;
+  position: absolute;
+  margin: 50%;
+  z-index: 6;
+}
+
+/*nose starts here*/
+.nose {
+  width: 50px;
+  height:70px;
+  margin-left: 75px;
+  margin-top: 98px;
+  border: 1px solid black;
+  border-radius: 130% 130% 60% 60%;
+  background-color: black;
+  position: absolute;
+  box-shadow: inset -5px -8px 8px 2px rgb(40,40,40);
+  z-index: 9;
+}
+
+.left-eye, .right-eye {
+  width: 30px;
+  height: 45px;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 1px -5px 13px 1px rgb(60,60,60);
+  z-index: 10;
+}
+.left-eye {
+margin-left: 55px;
+margin-top: 70px;
+transform: rotate(15deg);
+z-index: 11;
+}
+.right-eye {
+  margin-left: 115px;
+  margin-top: 70px;
+  transform: rotate(-20deg);
+}
+
+.left-eye::before, .right-eye::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  margin-left: 21px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  z-index: 12;
+
+}
+/*ears*/
+.left-ear, .right-ear {
+  width: 150px;
+  height: 150px;
+  border: 2px solid black;
+  background: grey;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: -2;
+}
+.left-ear {
+    margin-left: -98px;
+    margin-top: -60px;
+    border-radius: 40% 60% 40% 20%;
+    transform: rotate(-52deg);
+    box-shadow: inset 10px -5px 5px 5px rgb(90,90,90);
+    clip-path: polygon(0% 100%, 0% 1%, 99% 0%, 100% 100%, 95% 95%, 86% 91%, 76% 87%, 63% 83%, 53% 81%, 40% 83%, 28% 85%, 22% 88%, 11% 95%, 10% 110%);
+    z-index: -2;
+} 
+.left-ear::after {
+  content: "";
+  width: 110px;
+  height: 110px;
+  margin-left: 20px;
+  margin-top: 15px;
+  border-radius: 50% 150% 80% 80%;
+  box-shadow: inset -5px 13px 5px 3px #DEB887;
+  background: #FFE4C4;
+  position: absolute;
+  z-index: 3;
+}
+.left-ear::before {
+  content: "";
+  width: 50px;
+  height: 80px;
+  margin-left: 55px;
+  margin-top: 60px;
+  background: grey;
+  border-radius: 50% 0% 60% 20%;
+  box-shadow: inset 10px 1px 6px 1px rgb(90,90,90);
+  position:absolute;
+  clip-path: polygon(0% 99%, 100% 100%, 83% 75%, 67% 88%, 66% 72%, 64% 62%, 55% 58%, 54% 65%, 52% 75%, 48% 82%, 39% 85%, 35% 76%, 33% 67%, 33% 63%, 26% 72%, 24% 80%, 20% 85%, 13% 84%, 12% 80%, 9% 78%, 6% 83%, 5% 92%, 1% 98%);
+  transform: rotate(30deg);
+  z-index: 4;
+}
+.right-ear {
+  margin-left: 145px;
+  margin-top: -60px;
+  border-radius: 70% 30% 20% 0%;
+  transform: rotate(55deg);
+  box-shadow: inset -10px -10px 5px 10px rgb(90,90,90);
+  clip-path: polygon(0% 100%, 0% 1%, 99% 0%, 100% 100%, 90% 93%, 70% 81.7%, 62% 80%, 60% 79%, 50% 79%, 50% 79%, 50% 78%, 50% 78%, 50% 78%, 40% 80%);
+  z-index: -2;
+}
+.right-ear::after {
+  content: "";
+  width: 110px;
+  height: 110px;
+  margin-left: 20px;
+  margin-top: 15px;
+  background: #FFE4C4;
+  border-radius: 100% 50% 20% 10%;
+  position: absolute;
+  box-shadow: inset -5px 13px 5px 3px #DEB887;
+  z-index: 3;
+}
+.right-ear::before {
+  content: "";
+  width: 50px;
+  height: 80px;
+  margin-left: 35px;
+  margin-top: 56px;
+  background: grey;
+  border-radius: 19% 0% 100% 5%;
+  box-shadow: inset 10px -1px 6px 1px rgb(90,90,90);
+  position:absolute;
+  clip-path: polygon(0% 99%, 100% 100%, 83% 75%, 67% 88%, 66% 72%, 64% 62%, 55% 58%, 54% 65%, 52% 75%, 48% 82%, 39% 85%, 35% 76%, 33% 67%, 33% 63%, 26% 72%, 24% 80%, 20% 85%, 13% 84%, 12% 80%, 9% 78%, 6% 83%, 5% 92%, 1% 98%);
+  transform: rotate(15deg);
+  z-index: 4;
+}
+/*animation starts here*/
+#whole-head {
+  animation-duration: 2s;
+  animation-name: head-wobble;
+    @keyframes head-wobble {
+      from {
+        transform: rotate(20deg);
+      }
+      to {
+        transform: rotate(0deg);
+      }
+    }
+  }
+  
+  #l-eye, #r-eye {
+    animation-name: blinks;
+    animation-duration: .5s;
+    animation-iteration-count: 2;
+    
+  }
+  @keyframes blinks {
+    50% {
+      transform: scale(1, .01);
+    }
+    100% {
+      transform: none;
+    }
+  }
+
