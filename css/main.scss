@@ -93,8 +93,8 @@ header {
 
 .head-hero {
   display: flex;
-  align-items: flex-start;
-  margin-bottom: 180px;
+  justify-content: space-between;
+ 
 }
 
 .hero-container {
@@ -107,7 +107,6 @@ header {
   border-radius: 30%;
   border:1px solid black;
   display: flex;
-  margin: 30px;
   }
 
 
@@ -147,11 +146,22 @@ header {
           transform: rotate(15deg);
         }
       /* button toggle style */
-        .earsbtn.clicked, .eyesbtns.clicked, .headbtn.clicked, .mouthbtn.clicked {
+        .earsbtn.clicked, .eyesbtns.clicked, .headbtn.clicked, .nosebtn.clicked {
           background: rgba(114, 92, 78, 0.719);
           box-shadow: none;
           transition: all 0.5s ease 0s;
         }
+
+/* slider */
+
+.slide-container {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: 100px;
+  height: 100px;
+  
+}
         
        
 
@@ -272,6 +282,29 @@ header {
   position: absolute;
   box-shadow: inset -5px -8px 8px 2px rgb(40,40,40);
   z-index: 9;
+}
+
+.noseanimation {
+  animation-name: nose;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+}
+@keyframes nose {
+  30% {
+    transform: rotate(13deg);
+    transform-origin: 65% 20%;
+  }
+  60% {
+    transform: none;
+  }
+  70% {
+    transform: rotate(-13deg);
+    transform-origin: 65% 20%;
+  }
+  100% {
+    transform: none;
+  }
+
 }
 
 .left-eye, .right-eye {

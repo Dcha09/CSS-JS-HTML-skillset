@@ -106,10 +106,9 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  margin-bottom: 180px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .hero-container {
@@ -127,7 +126,6 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 30px;
 }
 
 .toggle-animation {
@@ -180,12 +178,25 @@ button:hover {
 }
 
 /* button toggle style */
-.earsbtn.clicked, .eyesbtns.clicked, .headbtn.clicked, .mouthbtn.clicked {
+.earsbtn.clicked, .eyesbtns.clicked, .headbtn.clicked, .nosebtn.clicked {
   background: rgba(114, 92, 78, 0.719);
   -webkit-box-shadow: none;
           box-shadow: none;
   -webkit-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
+}
+
+/* slider */
+.slide-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100px;
+  height: 100px;
 }
 
 /* Koala head section*/
@@ -346,6 +357,61 @@ button:hover {
   -webkit-box-shadow: inset -5px -8px 8px 2px #282828;
           box-shadow: inset -5px -8px 8px 2px #282828;
   z-index: 9;
+}
+
+.noseanimation {
+  -webkit-animation-name: nose;
+          animation-name: nose;
+  -webkit-animation-duration: .5s;
+          animation-duration: .5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes nose {
+  30% {
+    -webkit-transform: rotate(13deg);
+            transform: rotate(13deg);
+    -webkit-transform-origin: 65% 20%;
+            transform-origin: 65% 20%;
+  }
+  60% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  70% {
+    -webkit-transform: rotate(-13deg);
+            transform: rotate(-13deg);
+    -webkit-transform-origin: 65% 20%;
+            transform-origin: 65% 20%;
+  }
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes nose {
+  30% {
+    -webkit-transform: rotate(13deg);
+            transform: rotate(13deg);
+    -webkit-transform-origin: 65% 20%;
+            transform-origin: 65% 20%;
+  }
+  60% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  70% {
+    -webkit-transform: rotate(-13deg);
+            transform: rotate(-13deg);
+    -webkit-transform-origin: 65% 20%;
+            transform-origin: 65% 20%;
+  }
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 
 .left-eye, .right-eye {

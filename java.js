@@ -14,7 +14,10 @@ const leftEar =document.querySelector(".left-ear");
 
 const earBtn = document.querySelector(".earsbtn");
 
-const mouthBtn = document.querySelector(".mouthbtn");
+const noseBtn = document.querySelector(".nosebtn");
+
+const nose = document.querySelector(".nose")
+
 
 
 eyesBtns.addEventListener("click", () => {
@@ -49,6 +52,9 @@ earBtn.addEventListener("click", () => {
     }
 });
 
+noseBtn.addEventListener("click", () => {
+    nose.classList.toggle("noseanimation");
+});
 
 earBtn.addEventListener("click", () => {
     earBtn.classList.toggle('clicked');
@@ -61,8 +67,8 @@ headBtn.addEventListener("click", () => {
 eyesBtns.addEventListener("click", () => {
     eyesBtns.classList.toggle('clicked');
 });
-mouthBtn.addEventListener("click", () => {
-    mouthBtn.classList.toggle('clicked');
+noseBtn.addEventListener("click", () => {
+    noseBtn.classList.toggle('clicked');
 });
 
 
